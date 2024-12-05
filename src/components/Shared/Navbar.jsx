@@ -1,11 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
+import logo from "../../../public/assets/logo@2x.png";
 
 const Navbar = () => {
   return (
     <>
       <nav className="border-b">
-        <div className="project-container flex items-center justify-between py-6">
-          <h1>Logo</h1>
+        <div className="project-container flex items-center justify-between py-4">
+          <Image src={logo} width={166} height={48} alt="logo" />
           {/* navItems  */}
 
           <ul className="flex items-center space-x-3 font-thin text-xl">

@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "hero-pattern": "url('/public/assets/slider-1.jpg')",
+        "footer-texture": "url('/img/footer-texture.png')",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
