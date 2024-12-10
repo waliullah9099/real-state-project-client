@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -25,4 +28,37 @@ body {
   .menuItem {
     @apply pb-2 mt-3 text-xl text-white py-2 text-center border-b border-slate-600 md:border-b-0 md:hover:bg-transparent;
   }
+}
+
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  bottom: -30px;
+}
+
+.slick-dots li {
+  width: 12px;
+  height: 12px;
+}
+
+.slick-dots li button:before {
+  font-size: 0;
+}
+
+.slick-dots li button {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #60a7f3;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slick-dots li.slick-active button {
+  width: 100%;
+  height: 100%;
+  background-color: #007bff;
+  box-shadow: 0 0 0 1px #007bff, 0 0 0 3px #fff;
 }

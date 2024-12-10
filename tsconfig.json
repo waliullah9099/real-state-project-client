@@ -27,7 +27,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/Home/Hero.jsx"
+    "src/components/Home/Hero.jsx",
+    "src/middleware.js",
+    "src/middleware.js"
   ],
   "exclude": ["node_modules"]
 }

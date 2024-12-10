@@ -7,7 +7,7 @@ const Hero = () => {
     <>
       <section className="bg-[url('https://i.ibb.co.com/WywpjP9/slider-1.jpg')] bg-cover bg-center h-screen bg-fixed relative">
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black opacity-30"></div>
+        <div className="absolute inset-0 bg-black opacity-25"></div>
         <div className="project-container h-full flex justify-center pt-[10%] relative z-10">
           <div className="w-4/5 mx-auto text-center">
             <h1 className="text-white text-[70px] font-extrabold relative">
@@ -17,7 +17,7 @@ const Hero = () => {
             {/* content  */}
             <p className="text-xl text-white">
               We are a real estate agency that will help you find the best
-              residence you dream of, <br /> let’s discuss for your dream house?
+              residence <br /> you dream of, let’s discuss for your dream house?
             </p>
 
             {/* buttons  */}
@@ -38,9 +38,7 @@ const Hero = () => {
                   id="type"
                   className="bg-transparent text-black font-medium focus:outline-none cursor-pointer w-full"
                 >
-                  <option value="all" selected>
-                    All
-                  </option>
+                  <option value="all">All</option>
                   <option value="rent">Rent</option>
                   <option value="buy">Buy</option>
                 </select>
@@ -61,7 +59,7 @@ const Hero = () => {
                 </div>
 
                 {/* <!-- Icon --> */}
-                <button className="text-gray-500 hover:text-black">
+                <button className="hover:text-gray-500 text-black">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -84,9 +82,6 @@ const Hero = () => {
                 </button>
               </div>
 
-              {/* <!-- Divider --> */}
-              {/* <div className="w-px h-6 bg-gray-300"></div> */}
-
               {/* <!-- Keyword Input --> */}
               <div className="flex flex-col items-start border-r">
                 <label htmlFor="keyword" className="text-sm text-gray-500">
@@ -100,23 +95,20 @@ const Hero = () => {
                 />
               </div>
 
-              {/* <!-- Divider --> */}
-              {/* <div className="w-px h-6 bg-gray-300"></div> */}
-
               {/* <!-- Search Button --> */}
-              <button className="flex items-center px-4 py-2 bg-[#1563DF] text-white rounded-full hover:bg-blue-600">
+              <button className="flex items-center px-4 py-2 bg-[#1563DF] text-white rounded-full hover:bg-blue-800 transition-all duration-300">
                 <span className="mr-2">Search</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="2"
+                  strokeWidth="2"
                   stroke="currentColor"
                   className="w-5 h-5"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M21 21l-6-6m0 0a7 7 0 10-10-10 7 7 0 0010 10z"
                   />
                 </svg>
