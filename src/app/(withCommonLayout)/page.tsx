@@ -1,5 +1,7 @@
 import Hero from "@/components/Home/Hero";
 import OurLocation from "@/components/Home/OurLocation/OurLocation";
+import OurServices from "@/components/Home/OurServices/OurServices";
+import WhyChooseUs from "@/components/Home/WhyChooseUs/WhyChooseUs";
 import FeaturedProperties from "../../components/Home/FeaturedProperties/FeaturedProperties";
 
 export default function Home() {
@@ -8,6 +10,8 @@ export default function Home() {
       <Hero />
       <FeaturedProperties />
       <OurLocation />
+      <OurServices />
+      <WhyChooseUs />
       <div className="bg-gray-600 h-80"></div>
       <div className="bg-emerald-50 h-80"></div>
       <div className="bg-yellow-600 h-80"></div>
