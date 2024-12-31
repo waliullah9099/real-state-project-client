@@ -1,4 +1,5 @@
 import Hero from "@/components/Home/Hero";
+import OurBlogs from "@/components/Home/OurBlogs/OurBlogs";
 import OurLocation from "@/components/Home/OurLocation/OurLocation";
 import OurServices from "@/components/Home/OurServices/OurServices";
 import WhyChooseUs from "@/components/Home/WhyChooseUs/WhyChooseUs";
@@ -12,11 +13,7 @@ export default function Home() {
       <OurLocation />
       <OurServices />
       <WhyChooseUs />
-      <div className="bg-gray-600 h-80"></div>
-      <div className="bg-emerald-50 h-80"></div>
-      <div className="bg-yellow-600 h-80"></div>
-      <div className="bg-orange-500 h-80"></div>
-      <div className="bg-lime-400 h-80"></div>
+      <OurBlogs />
     </>
   );
 }

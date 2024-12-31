@@ -22,6 +22,7 @@ export default function WhyChooseUs() {
               <div className="bg-white rounded-full p-2 flex items-center shadow-lg">
                 <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
                   <Image
+                    className="w-4/5 h-4/5 rounded-full"
                     src="https://i.ibb.co.com/jkgQsYv/download.jpg"
                     alt="Partner icon"
                     width={24}
@@ -36,6 +37,7 @@ export default function WhyChooseUs() {
               <div className="bg-white rounded-full p-2 flex items-center shadow-lg">
                 <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
                   <Image
+                    className="w-4/5 h-4/5 rounded-full"
                     src="https://i.ibb.co.com/jkgQsYv/download.jpg"
                     alt="Property icon"
                     width={24}

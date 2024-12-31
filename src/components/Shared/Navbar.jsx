@@ -41,6 +41,15 @@ const Navbar = () => {
                 <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1563DF] transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </li>
+            <li>
+              <Link
+                href="/login"
+                className="login btn-primary font-normal text-base !rounded-[4px]"
+                // style={{ borderRadius: "4px" }}
+              >
+                Login
+              </Link>
+            </li>
           </ul>
 
           {/* <LightDark /> */}

@@ -5,7 +5,7 @@ import SectionTitle from "../../ui/SectionTitle";
 import PropertyCard from "./PropertyCard";
 const FeaturedProperties = () => {
   return (
-    <div className=" my-24">
+    <div className="py-24">
       <div className="project-container max-w-7xl">
         <SectionTitle title="Best Property Value" subTitle="Top Properties" />
 

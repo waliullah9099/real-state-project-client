@@ -39,11 +39,11 @@ body {
   }
 
   .search-btn {
-    @apply bg-primary px-8 py-3 rounded-md block mx-auto text-white font-bold -translate-y-1/2 shadow-lg hover:shadow-primary/50 active:scale-95 transition-all;
+    @apply bg-[#1563DF] px-8 py-3 rounded-xl block mx-auto text-white font-bold -translate-y-1/2 shadow-lg hover:shadow-[#1563DF]/50 active:scale-95 transition-all;
   }
 
   .btn-primary {
-    @apply bg-primary px-8 py-2 rounded-md block text-white font-bold shadow-lg hover:shadow-primary/50 active:scale-95 transition-all;
+    @apply bg-[#1563DF] px-8 py-2 rounded-md block text-white font-bold shadow-lg hover:shadow-[#1563DF]/50 active:scale-95 transition-all;
   }
 
   #searchParams {

@@ -19,14 +19,14 @@ const TextAnimation = () => {
           isFirstTextVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        Perfect Home
+        Perfect Hotel
       </span>
       <span
         className={`absolute top-0 left-[45%] transition-opacity duration-1000 ${
           isFirstTextVisible ? "opacity-0" : "opacity-100"
         }`}
       >
-        Dream Home
+        Dream Hotel
       </span>
     </>
   );
