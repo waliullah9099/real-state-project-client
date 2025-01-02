@@ -1,4 +1,5 @@
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
+import bcrypt from "bcryptjs";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
@@ -32,7 +33,12 @@ export const {
             throw new Error("No user found with that email address.");
           }
 
-          const isMatch = user.email === credentials.email;
+          const isMatch = await bcrypt.compare(
+            credentials.password,
+            user.password
+            // TODO: Make this more secure
+            // bcrypt.compareSync(credentials.password, user.password)
+          );
           if (isMatch) {
             return user;
           } else {
