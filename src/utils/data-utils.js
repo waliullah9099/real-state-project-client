@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 export const replaceMongoIdInArray = (arr) => {
   const mappedArray = arr
     .map((item) => {
@@ -16,3 +17,10 @@ export const replaceMongoIdInObject = (obj) => {
 
   return updatedObj;
 };
+
+export function isDateInBetween(date, from, to) {
+  return (
+    new Date(date).getTime() >= new Date(from).getTime() &&
+    new Date(date).getTime() <= new Date(to).getTime()
+  );
+}

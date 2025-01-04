@@ -31,7 +31,7 @@ const HotelRating = async ({ id }) => {
 
   return (
     <>
-      <div className="bg-primary w-[35px] h-[35px] rounded-sm text-white grid place-items-center font-bold">
+      <div className="bg-[#1563DF] w-[35px] h-[35px] rounded-sm text-white grid place-items-center font-bold">
         {avgRating}
       </div>
       <span className="font-medium">{getRatingDescription(avgRating)}</span>
