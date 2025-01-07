@@ -30,7 +30,6 @@ export function middleware(request) {
       new URL(`/${locale}/${pathname}`, request.url)
     );
   }
-
   return NextResponse.next();
 }
 

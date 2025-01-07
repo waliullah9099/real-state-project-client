@@ -1,8 +1,11 @@
 import { hotelModel } from "@/models/hotel-model";
+import { userModel } from "@/models/user-model";
 import { bookingModel } from "../../models/booking-model";
 import { ratingModel } from "../../models/rating-model";
 import { reviewModel } from "../../models/review-model";
 import {
+  isDateInBetween,
+  isDateInbetween,
   replaceMongoIdInArray,
   replaceMongoIdInObject,
 } from "../../utils/data-utils";
@@ -43,12 +46,12 @@ export async function getAllHotels(destination, checkin, checkout) {
 
 async function findBooking(hotelId, checkin, checkout) {
   const matches = await bookingModel
-    .find({ hotelId: hotelId.toString() })
+    .find({ hotelId: hotelId?.toString() })
     .lean();
 
   const found = matches.find((match) => {
     return (
-      isDateInbetween(checkin, match.checkin, match.checkout) ||
+      isDateInBetween(checkin, match.checkin, match.checkout) ||
       isDateInbetween(checkout, match.checkin, match.checkout)
     );
   });
@@ -90,4 +93,10 @@ export async function getReviewsForAHotel(hotelId) {
   }
 
   return replaceMongoIdInArray(hotel);
+}
+
+export async function getUserByEmail(email) {
+  const users = await userModel.findOne({ email }).lean();
+
+  return replaceMongoIdInObject(users[0]);
 }
