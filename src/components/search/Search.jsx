@@ -32,7 +32,7 @@ const Search = ({ fromList, destination, checkin, checkout }) => {
     setSearchTerm(state);
   };
 
-  function doSearch(event) {
+  function doSearch() { // event
     const params = new URLSearchParams(searchParams);
 
     params.set("destination", searchTerm?.destination || "all");
