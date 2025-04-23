@@ -1,14 +1,14 @@
 "use client";
 
-import PropertyTable from "@/components/dashboard/propertyTable/PropertyTable";
-import { useGetAllUsersQuery } from "@/redux/api/userApi";
 import { Users } from "lucide-react";
+import { useGetAllUsersQuery } from "@/redux/api/userApi";
+import UserTable from "@/components/dashboard/userTable/UserTable";
 
 export default function UsersPage() {
   const query: Record<string, any> = {};
   const { data, isLoading } = useGetAllUsersQuery({ ...query });
 
-  console.log(data);
+  console.log(data?.data);
 
   return (
     <div className="containe mx-auto px-4 py-8">
@@ -24,7 +24,7 @@ export default function UsersPage() {
 
       <div className="bg-white rounded-xl shadow-md overflow-hidden">
         <div className="overflow-x-auto">
-          <PropertyTable properties={data?.data} />
+          <UserTable users={data?.data} />
         </div>
 
         {/* <Pagination /> */}
