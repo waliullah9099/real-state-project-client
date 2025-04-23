@@ -10,13 +10,15 @@ const LoginForm = () => {
     setError("");
     try {
       const formData = new FormData(e.currentTarget);
-      const response = await Login(formData);
+      console.log(formData);
+      
+      // const response = await Login(formData);
 
-      if (response?.error) {
-        setError(response.error.message);
-      } else {
-        router.push("/bookings");
-      }
+      // if (response?.error) {
+      //   setError(response.error.message);
+      // } else {
+      //   router.push("/bookings");
+      // }
     } catch (err) {
       setError(err.message);
     }

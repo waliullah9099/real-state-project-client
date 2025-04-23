@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/assets/logo@2x.png";
-import Logout from "../auth/Logout";
 
 const Navbar = async ({ menuItem = true }) => {
   return (
@@ -63,7 +62,12 @@ const Navbar = async ({ menuItem = true }) => {
             </ul>
           )}
 
-          {/* <LightDark /> */}
+          <Link
+            href="/login"
+            className="login btn-primary font-normal text-base !rounded-[4px]"
+          >
+            Login
+          </Link>
         </div>
       </nav>
     </>
