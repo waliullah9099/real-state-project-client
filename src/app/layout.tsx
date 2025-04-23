@@ -1,3 +1,4 @@
+import Providers from "@/lib/providers/Providers";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -12,8 +13,10 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`bg-gray-50 antialiased`}>{children}</body>
-    </html>
+    <Providers>
+      <html lang="en">
+        <body className={`bg-gray-50 antialiased`}>{children}</body>
+      </html>
+    </Providers>
   );
 }

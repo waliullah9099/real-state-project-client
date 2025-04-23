@@ -1,3 +1,5 @@
+import { DashboardSidebar } from "@/components/dashboard/sidebar/Sidebar";
+import { DashboardTopbar } from "@/components/dashboard/topbar/Topbar";
 import Link from "next/link";
 import { BiHome } from "react-icons/bi";
 import { GiSkills } from "react-icons/gi";
@@ -46,14 +48,16 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   ];
   return (
     <>
-      <div className=" flex">
-        <aside className="flex flex-[2] bg-gray-700 h-screen p-4 pr-12 fixed">
-          <ul className="flex flex-col space-y-3 text-lg font-medium text-secondary">
-            {items}
-          </ul>
-        </aside>
-        <div className="flex flex-[5] pl-[175px]">{children}</div>
+      <div className="flex min-h-screen">
+      {/* Sidebar spans full height */}
+      <DashboardSidebar />
+
+      {/* Main content area */}
+      <div className="flex flex-1 flex-col">
+        <DashboardTopbar />
+        <main className="flex-1 p-4 md:p-6">{children}</main>
       </div>
+    </div>
     </>
   );
 };
