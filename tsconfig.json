@@ -30,6 +30,6 @@
     "src/components/Home/Hero.jsx",
     "src/middleware.js",
     "src/middleware.js"
-  ],
+, "src/components/search/Search.jsx"  ],
   "exclude": ["node_modules"]
 }

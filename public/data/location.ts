@@ -41,4 +41,34 @@ export const locations = [
     location: "Miami",
     image: "https://i.ibb.co.com/nm5pqjJ/location-3.jpg",
   },
+  {
+    id: 8,
+    propertyCount: 321,
+    location: "Toledo",
+    image: "https://i.ibb.co.com/nm5pqjJ/location-3.jpg",
+  },
+  {
+    id: 9,
+    propertyCount: 321,
+    location: "Orange",
+    image: "https://i.ibb.co.com/KGtMfqv/location-4.jpg",
+  },
+  {
+    id: 10,
+    propertyCount: 321,
+    location: "Fairfield",
+    image: "https://i.ibb.co.com/VV0CCKb/location-5.jpg.jpg",
+  },
+  {
+    id: 11,
+    propertyCount: 321,
+    location: "Naperville",
+    image: "https://i.ibb.co.com/nD1gkWX/location-2.jpg",
+  },
+  {
+    id: 12,
+    propertyCount: 321,
+    location: "Miami",
+    image: "https://i.ibb.co.com/nm5pqjJ/location-3.jpg",
+  },
 ];
