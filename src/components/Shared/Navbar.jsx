@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/assets/logo@2x.png";
-
 const Navbar = async ({ menuItem = true }) => {
+
   return (
     <>
       <nav className="border-b">

@@ -16,6 +16,9 @@ const doctorsApi = baseApi.injectEndpoints({
       query: (data) => ({
         url: "/auth/login",
         method: "POST",
+        headers: {
+          "Content-Type": "applicaion/json"
+        },
         data,
       }),
       invalidatesTags: [tagTypes.user],

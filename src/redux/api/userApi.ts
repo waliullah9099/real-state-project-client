@@ -24,6 +24,14 @@ const doctorsApi = baseApi.injectEndpoints({
         providesTags: [tagTypes.user],
     }),
 
+    getMyProfile: build.query({
+        query: () => ({
+            url: `/users/me`,
+            method: "GET",
+        }),
+        providesTags: [tagTypes.user],
+    }),
+
     deleteUser: build.mutation({
         query: (id) => ({
             url: `/users/${id}`,
@@ -45,6 +53,7 @@ const doctorsApi = baseApi.injectEndpoints({
 export const {
     useGetAllUsersQuery,
     useGetSingleUserQuery,
+    useGetMyProfileQuery,
     useDeleteUserMutation,
     useUpdateUserMutation,
 } = doctorsApi;

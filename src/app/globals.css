@@ -29,6 +29,15 @@ body {
     @apply max-w-7xl mx-auto w-full px-4;
   }
 
+  .btn-primary {
+    @apply bg-[#1563DF] px-8 py-2 rounded-md block text-white font-bold shadow-lg hover:shadow-[#1563DF]/50 active:scale-95 transition-all;
+  }
+
+  .btn-disabled {
+    @apply bg-gray-500 px-8 py-2 rounded-md block text-white font-bold shadow-lg cursor-default;
+  }
+
+
   /* Input */
   /* select {
     @apply w-full px-4 py-2 rounded-md border border-black/20 bg-transparent;
