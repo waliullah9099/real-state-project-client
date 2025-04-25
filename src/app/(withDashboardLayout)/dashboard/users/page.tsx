@@ -8,7 +8,7 @@ export default function UsersPage() {
   const query: Record<string, any> = {};
   const { data, isLoading } = useGetAllUsersQuery({ ...query });
 
-  console.log(data?.data);
+  // console.log(data?.data);
 
   return (
     <div className="containe mx-auto px-4 py-8">

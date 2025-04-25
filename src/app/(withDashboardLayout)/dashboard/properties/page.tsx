@@ -4,14 +4,14 @@ import { useState } from "react";
 import { Search, Home } from "lucide-react";
 import { useGetAllPropertiesQuery } from "@/redux/api/propertyApi/propertyApi";
 import PropertyTable from "@/components/dashboard/propertyTable/PropertyTable";
-import Pagination from "@/components/ui/Pagination";
+
 
 export default function PropertiesPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const query: Record<string, any> = {};
   const { data, isLoading } = useGetAllPropertiesQuery({ ...query });
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="containe mx-auto px-4 py-8">

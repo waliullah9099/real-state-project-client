@@ -1,6 +1,7 @@
 import Providers from "@/lib/providers/Providers";
 import "./globals.css";
 import type { Metadata } from "next";
+import { Toaster } from 'sonner'
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +16,12 @@ export default async function RootLayout({
   return (
     <Providers>
       <html lang="en">
-        <body className={`bg-gray-50 antialiased`}>{children}</body>
+        <body className={`bg-gray-50 antialiased`}>
+          <>
+          {children}
+          <Toaster position="top-left" />
+          </>
+          </body>
       </html>
     </Providers>
   );

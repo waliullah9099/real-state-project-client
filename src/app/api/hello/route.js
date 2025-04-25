@@ -3,7 +3,7 @@ import { comments } from "../../../../public/data/comments";
 
 export async function GET(request) {
   const headerList = headers();
-  console.log(headerList.get("Authorization"));
+  // console.log(headerList.get("Authorization"));
 
   const searchParams = request.nextUrl.searchParams;
   const query = searchParams.get("query");

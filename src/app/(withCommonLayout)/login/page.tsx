@@ -2,25 +2,36 @@
 
 import Form from "@/components/form/Form";
 import Input from "@/components/form/Input";
-import { useLoginMutation } from "@/redux/api/authApi";
+import { loginUser } from "@/services/actions/loginUser";
+import { registerUser } from "@/services/actions/registerUser";
+import { modifyPayload } from "@/utils/modifyPayload";
 import Link from "next/link";
 import { FieldValues } from "react-hook-form";
 
 const LoginPage = () => {
-  const [login] = useLoginMutation();
-  const handleRegister = (data: FieldValues) => {
-    const res = login(data);
-    console.log(res);
+  const handleLogin = async(values: FieldValues) => {
+    
+    try {
+      
+      const res = await loginUser(values)
+      console.log(res);
+
+    } catch (error: any) {
+      console.error(error?.message)
+    }
+
+
+    
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-xl font-semibold text-center mb-4">
-          Create an Account
+          Login Here
         </h2>
 
-        <Form onSubmit={handleRegister}>
+        <Form onSubmit={handleLogin}>
           <Input
             name="email"
             label="Email"
