@@ -31,13 +31,7 @@ const Navbar = async ({ menuItem = true }) => {
             </li>
             <li className="px-2">
               <Link className="relative group" href={`/`}>
-                Blog
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1563DF] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </li>s 
-            <li className="px-2">
-              <Link className="relative group" href={`/`}>
-                Dashboard
+                Blog's
                 <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1563DF] transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </li>

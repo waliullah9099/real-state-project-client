@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image"
 import {
   Eye,
@@ -7,8 +9,28 @@ import {
   Building,
   DollarSign,
 } from "lucide-react"
+import { useDeletePropertiesMutation } from "@/redux/api/propertyApi/propertyApi";
+import { toast } from "sonner";
 
 const PropertyTable = ({properties}: any) => {
+  const [ deleteProperty ] = useDeletePropertiesMutation()
+  const handlePropertyDelete = (id: string) => {
+    toast('Are you sure?', {
+      action: {
+        label: 'Yes, delete it',
+        onClick: () => {
+          deleteProperty(id)
+        },
+      },
+      cancel: {
+        label: 'Cancel',
+        onClick: () => {
+          console.log('Action canceled.');
+        },
+      },
+    });
+    
+  }
   return (
     <>
       <table className="min-w-full divide-y divide-gray-200">
@@ -176,7 +198,7 @@ const PropertyTable = ({properties}: any) => {
                   <button className="p-1.5 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
                     <Pencil className="h-4 w-4 text-gray-600" />
                   </button>
-                  <button className="p-1.5 bg-orange-100 rounded-md hover:bg-orange-200 transition-colors">
+                  <button onClick={ () => handlePropertyDelete(property?._id) } className="p-1.5 bg-orange-100 rounded-md hover:bg-orange-200 transition-colors">
                     <Trash2 className="h-4 w-4 text-orange-600" />
                   </button>
                 </div>

@@ -56,11 +56,11 @@ const ProfileMenu = () => {
         className="focus:outline-none"
       >
         <Image
-          src={"https://i.ibb.co.com/vLLw4bV/69842605.jpg"}
           alt="Profile"
           width={40}
           height={40}
-          className="rounded-full border border-gray-300"
+          src={"https://i.ibb.co.com/1mksH0N/blog-11.jpg"}
+          className="inline-block size-10 rounded-full ring-2 ring-offset-2"
         />
       </button>
 
