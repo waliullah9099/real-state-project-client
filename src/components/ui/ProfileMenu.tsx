@@ -56,7 +56,7 @@ const ProfileMenu = () => {
         className="focus:outline-none"
       >
         <Image
-          src={userInfo?.profileImage || "/assets/default-avatar.png"}
+          src={"https://i.ibb.co.com/vLLw4bV/69842605.jpg"}
           alt="Profile"
           width={40}
           height={40}
