@@ -1,13 +1,22 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { BiNotification } from "react-icons/bi"
-import { Menu, X } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { BiNotification } from "react-icons/bi";
+import { Menu, Search, X } from "lucide-react";
+import Modal from "@/components/ui/Modal";
+import AddProperty from "../addProperty/AddProperty";
 
 export function DashboardTopbar() {
-  const [searchQuery, setSearchQuery] = useState("")
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleAddProperty = () => {
+    console.log("clicked for modal");
+
+    setModalOpen(false);
+  };
 
   return (
     <header className="h-16 border-b border-gray-200 bg-white px-4 md:px-6 flex items-center justify-between shadow">
@@ -25,20 +34,7 @@ export function DashboardTopbar() {
         {/* Search input */}
         <div className="relative w-full max-w-md">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+            <Search className="h-4 w-4 text-gray-400" />
           </div>
           <input
             type="search"
@@ -52,6 +48,17 @@ export function DashboardTopbar() {
 
       {/* Right side with notification button */}
       <div className="flex items-center gap-2">
+        <div>
+          <button
+            onClick={() => setModalOpen(true)}
+            className="px-4 py-2 text-white bg-blue-600 rounded"
+          >
+            Add Property
+          </button>
+
+         <AddProperty handleAddProperty={handleAddProperty} isModalOpen={isModalOpen} setModalOpen={setModalOpen} />
+        </div>
+
         <button className="rounded-md border border-gray-300 p-2 text-gray-500 hover:bg-gray-100">
           <span className="sr-only">Notifications</span>
           <BiNotification />
@@ -61,14 +68,23 @@ export function DashboardTopbar() {
       {/* Mobile sidebar */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
-          <div className="fixed inset-0 bg-black bg-opacity-50" onClick={() => setIsMobileMenuOpen(false)}></div>
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50"
+            onClick={() => setIsMobileMenuOpen(false)}
+          ></div>
           <div className="fixed inset-y-0 left-0 w-64 bg-gray-800 text-white">
             <div className="flex h-16 items-center justify-between px-6 border-b border-gray-700">
-              <Link href="/dashboard" className="flex items-center gap-2 font-semibold">
+              <Link
+                href="/dashboard"
+                className="flex items-center gap-2 font-semibold"
+              >
                 <span className="text-xl">📊</span>
                 <span>Acme Inc</span>
               </Link>
-              <button onClick={() => setIsMobileMenuOpen(false)} className="text-white">
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white"
+              >
                 <X />
               </button>
             </div>
@@ -77,7 +93,11 @@ export function DashboardTopbar() {
                 { icon: "🏠", label: "Dashboard", href: "/dashboard" },
                 { icon: "👥", label: "Users", href: "/dashboard/users" },
                 { icon: "📦", label: "Products", href: "/dashboard/products" },
-                { icon: "📊", label: "Analytics", href: "/dashboard/analytics" },
+                {
+                  icon: "📊",
+                  label: "Analytics",
+                  href: "/dashboard/analytics",
+                },
                 { icon: "📑", label: "Reports", href: "/dashboard/reports" },
                 { icon: "⚙️", label: "Settings", href: "/dashboard/settings" },
               ].map((item) => (
@@ -96,5 +116,5 @@ export function DashboardTopbar() {
         </div>
       )}
     </header>
-  )
+  );
 }

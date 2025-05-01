@@ -59,7 +59,7 @@ const ProfileMenu = () => {
           alt="Profile"
           width={40}
           height={40}
-          src={"https://i.ibb.co.com/1mksH0N/blog-11.jpg"}
+          src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJWOuZ5yAzIag6yU0uvACh1WF3qYGXVBpolA&s"}
           className="inline-block size-10 rounded-full ring-2 ring-offset-2"
         />
       </button>

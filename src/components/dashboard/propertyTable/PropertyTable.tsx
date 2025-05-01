@@ -19,7 +19,9 @@ const PropertyTable = ({properties}: any) => {
       action: {
         label: 'Yes, delete it',
         onClick: () => {
-          deleteProperty(id)
+          const res = deleteProperty(id)
+          console.log(res);
+          
         },
       },
       cancel: {
@@ -29,7 +31,6 @@ const PropertyTable = ({properties}: any) => {
         },
       },
     });
-    
   }
   return (
     <>
