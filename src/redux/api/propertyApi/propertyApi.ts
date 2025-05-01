@@ -5,7 +5,7 @@ const doctorsApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     createProperties: build.mutation({
       query: (data) => ({
-        url: "/properties",
+        url: "/properties/create-property",
         method: "POST",
         data,
       }),

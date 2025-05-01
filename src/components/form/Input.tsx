@@ -8,7 +8,7 @@ interface FormInputProps {
   rules?: RegisterOptions;
 }
 
-const Input = ({ name, label, type = 'text', placeholder = '', rules }: FormInputProps) => {
+const Input = ({ name, label, type = 'text', placeholder = label, rules }: FormInputProps) => {
   const {
     register,
     formState: { errors },

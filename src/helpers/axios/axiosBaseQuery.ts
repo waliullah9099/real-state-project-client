@@ -29,7 +29,7 @@ export const axiosBaseQuery =
           "Content-Type": contentType || "application/json",
         },
       });
-      return { data: result };
+      return result  // { data: result };
     } catch (axiosError) {
       const err = axiosError as AxiosError;
       return {

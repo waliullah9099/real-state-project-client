@@ -12,11 +12,11 @@ export function DashboardTopbar() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleAddProperty = () => {
-    console.log("clicked for modal");
+  // const handleAddProperty = (data) => {
+  //   console.log("clicked for modal");
 
-    setModalOpen(false);
-  };
+  //   setModalOpen(false);
+  // };
 
   return (
     <header className="h-16 border-b border-gray-200 bg-white px-4 md:px-6 flex items-center justify-between shadow">
@@ -56,7 +56,7 @@ export function DashboardTopbar() {
             Add Property
           </button>
 
-         <AddProperty handleAddProperty={handleAddProperty} isModalOpen={isModalOpen} setModalOpen={setModalOpen} />
+         <AddProperty isModalOpen={isModalOpen} setModalOpen={setModalOpen} />
         </div>
 
         <button className="rounded-md border border-gray-300 p-2 text-gray-500 hover:bg-gray-100">

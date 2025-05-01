@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { BiCloset } from "react-icons/bi";
 import { GrClose } from "react-icons/gr";
 
 interface ReusableModalProps {
@@ -43,7 +42,7 @@ const Modal: React.FC<ReusableModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div
         ref={modalRef}
-        className="relative w-full max-w-lg p-6 mx-4 bg-white rounded-lg shadow-lg"
+        className="relative w-ful ma-lg p-6 mx-4 bg-white rounded-lg shadow-lg"
       >
         {/* Close Button */}
         <button

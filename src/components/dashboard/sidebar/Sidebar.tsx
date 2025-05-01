@@ -36,7 +36,7 @@ export function DashboardSidebar() {
     <aside className="w-64 bg-gray-800 text-white hidden md:block shadow">
       <div className="h-16 flex items-center px-6 border-b border-gray-700">
         <Link
-          href="/dashboard"
+          href="/"
           className="flex items-center gap-2 font-semibold"
         >
           <span className="text-xl">📊</span>
