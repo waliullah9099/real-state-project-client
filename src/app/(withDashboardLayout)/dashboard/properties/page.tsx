@@ -27,7 +27,7 @@ export default function PropertiesPage() {
 
       <div className="bg-white rounded-xl shadow-md overflow-hidden">
         <div className="overflow-x-auto">
-          <PropertyTable properties={data?.data} />
+          <PropertyTable properties={data} />
         </div>
 
         {/* <Pagination /> */}

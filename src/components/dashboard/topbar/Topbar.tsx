@@ -12,12 +12,6 @@ export function DashboardTopbar() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // const handleAddProperty = (data) => {
-  //   console.log("clicked for modal");
-
-  //   setModalOpen(false);
-  // };
-
   return (
     <header className="h-16 border-b border-gray-200 bg-white px-4 md:px-6 flex items-center justify-between shadow">
       {/* Left side with search */}

@@ -26,23 +26,23 @@ const Modal: React.FC<ReusableModalProps> = ({
   }, [onClose]);
 
   // Outside click to close
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-        onClose();
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [onClose]);
+  // useEffect(() => {
+  //   const handleClickOutside = (e: MouseEvent) => {
+  //     if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+  //       onClose();
+  //     }
+  //   };
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => document.removeEventListener("mousedown", handleClickOutside);
+  // }, [onClose]);
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-500 bg-opacity-5">
       <div
         ref={modalRef}
-        className="relative w-ful ma-lg p-6 mx-4 bg-white rounded-lg shadow-lg"
+        className="relative w-ful ma-lg p-6 mx-4 bg-white rounded-lg"
       >
         {/* Close Button */}
         <button

@@ -3,12 +3,13 @@ import { useFormContext, FieldValues, RegisterOptions } from 'react-hook-form';
 interface FormInputProps {
   name: string;
   label: string;
+  value?: any;
   type?: string;
   placeholder?: string;
   rules?: RegisterOptions;
 }
 
-const Input = ({ name, label, type = 'text', placeholder = label, rules }: FormInputProps) => {
+const Input = ({ name, label, type = 'text', placeholder = label, rules, value }: FormInputProps) => {
   const {
     register,
     formState: { errors },
@@ -24,6 +25,7 @@ const Input = ({ name, label, type = 'text', placeholder = label, rules }: FormI
       <input
         id={name}
         type={type}
+        value={value}
         placeholder={placeholder}
         {...register(name, rules)}
         className={`w-full px-4 py-2 border ${

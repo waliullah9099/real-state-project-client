@@ -1,37 +1,34 @@
 "use client";
 
-import Image from "next/image"
-import {
-  Eye,
-  Pencil,
-  Trash2,
-  Home,
-  Building,
-  DollarSign,
-} from "lucide-react"
+import Image from "next/image";
+import { Eye, Pencil, Trash2, Home, Building, DollarSign } from "lucide-react";
 import { useDeletePropertiesMutation } from "@/redux/api/propertyApi/propertyApi";
 import { toast } from "sonner";
+import { useState } from "react";
+import AddProperty from "../addProperty/AddProperty";
 
-const PropertyTable = ({properties}: any) => {
-  const [ deleteProperty ] = useDeletePropertiesMutation()
+const PropertyTable = ({ properties }: any) => {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedProperty, setSelectedProperty] = useState(null);
+  const [deleteProperty] = useDeletePropertiesMutation();
+
   const handlePropertyDelete = (id: string) => {
-    toast('Are you sure?', {
+    toast("Are you sure?", {
       action: {
-        label: 'Yes, delete it',
+        label: "Yes, delete it",
         onClick: () => {
-          const res = deleteProperty(id)
-          console.log(res);
-          
+          const res = deleteProperty(id);
         },
       },
       cancel: {
-        label: 'Cancel',
+        label: "Cancel",
         onClick: () => {
-          console.log('Action canceled.');
+          console.log("Action canceled.");
         },
       },
     });
-  }
+  };
+
   return (
     <>
       <table className="min-w-full divide-y divide-gray-200">
@@ -107,7 +104,7 @@ const PropertyTable = ({properties}: any) => {
         <tbody className="bg-white divide-y divide-gray-200">
           {properties?.map((property: any, index: number) => (
             <tr
-              key={property.id}
+              key={property?._id}
               className={
                 index % 2 === 0
                   ? "bg-white hover:bg-blue-50 transition-colors"
@@ -119,7 +116,7 @@ const PropertyTable = ({properties}: any) => {
                   <div className="h-16 w-16 flex-shrink-0 mr-4 overflow-hidden rounded-md border border-gray-200">
                     <Image
                       src={property?.thumbNailImage || "/placeholder.svg"}
-                      alt={property.name}
+                      alt={property?.title}
                       width={64}
                       height={64}
                       className="h-full w-full object-cover"
@@ -182,10 +179,10 @@ const PropertyTable = ({properties}: any) => {
       </td> */}
               <td className="px-6 py-4 whitespace-nowrap">
                 <span
-                  className={`inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium ${
+                  className={`inline-flex items-center px-2.5 py-1 !rounded-md text-xs font-medium ${
                     property.status === "approved"
-                      ? "bg-green-500 text-white"
-                      : "bg-orange-500 text-white"
+                      ? "bg-green-500 text-white rounded-md"
+                      : "bg-orange-500 text-white rounded-md"
                   }`}
                 >
                   {property.status}
@@ -196,10 +193,25 @@ const PropertyTable = ({properties}: any) => {
                   <button className="p-1.5 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
                     <Eye className="h-4 w-4 text-gray-600" />
                   </button>
-                  <button className="p-1.5 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
+                  <button
+                    onClick={() => {
+                      setSelectedProperty(property);
+                      setModalOpen(true);
+                    }}
+                    className="p-1.5 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
+                  >
                     <Pencil className="h-4 w-4 text-gray-600" />
                   </button>
-                  <button onClick={ () => handlePropertyDelete(property?._id) } className="p-1.5 bg-orange-100 rounded-md hover:bg-orange-200 transition-colors">
+                  <AddProperty
+                    isModalOpen={isModalOpen}
+                    setModalOpen={setModalOpen}
+                    initialData={selectedProperty}
+                    editMode={true}
+                  />
+                  <button
+                    onClick={() => handlePropertyDelete(property?._id)}
+                    className="p-1.5 bg-orange-100 rounded-md hover:bg-orange-200 transition-colors"
+                  >
                     <Trash2 className="h-4 w-4 text-orange-600" />
                   </button>
                 </div>

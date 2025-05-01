@@ -42,7 +42,7 @@ const doctorsApi = baseApi.injectEndpoints({
       invalidatesTags: [tagTypes.properties],
     }),
 
-    updateProperties: build.mutation({
+    updateProperty: build.mutation({
       query: ({ id, data }) => ({
         url: `/properties/${id}`,
         method: "PATCH",
@@ -58,5 +58,5 @@ export const {
     useGetAllPropertiesQuery,
     useGetSinglePropertiesQuery,
     useDeletePropertiesMutation,
-    useUpdatePropertiesMutation,
+    useUpdatePropertyMutation
 } = doctorsApi;
