@@ -37,13 +37,13 @@ function AllLocation() {
           slidesToScroll: 3,
         },
       },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
+      // {
+      //   breakpoint: 768,
+      //   settings: {
+      //     slidesToShow: 3,
+      //     slidesToScroll: 3,
+      //   },
+      // },
       {
         breakpoint: 600,
         settings: {
@@ -58,9 +58,6 @@ function AllLocation() {
           slidesToScroll: 1,
         },
       },
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
     ],
     customPaging: (i: number) => (
       <button className="e" aria-label={`Go to slide ${i + 1}`} />
