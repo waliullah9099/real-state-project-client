@@ -11,10 +11,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black opacity-25"></div>
         <div className="project-container h-full flex justify-center pt-[10%] relative z-10">
           <div className="w-4/5 mx-auto text-center">
-            <h1 className="text-white text-[70px] font-extrabold relative">
-              <span className="pr-[480px]">Find Your </span>
-              <TextAnimation />
-            </h1>
+            <TextAnimation />
             {/* content  */}
             <p className="text-xl text-white">
               We are a real estate agency that will help you find the best

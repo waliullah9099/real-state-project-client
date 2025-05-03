@@ -10,14 +10,14 @@ import FeaturedProperties from "../../components/Home/FeaturedProperties/Feature
 export default function Home() {
   return (
     <>
-      {/* <Hero /> */}
-      <FeaturedProperties />
+      <Hero />
+      {/* <FeaturedProperties />
       <OurLocation />
       <OurServices />
       <WhyChooseUs />
       <OurBlogs />
       <OurAgent />
-      <Testimonials />
+      <Testimonials /> */}
     </>
   );
 }
