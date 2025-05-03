@@ -4,7 +4,7 @@ import AllLocation from "./AllLocation";
 const OurLocation = () => {
   return (
     <>
-      <div className="my-12">
+      <div className="my-12 overflow-hidden">
         <SectionTitle title="Our Location For You" subTitle="Explore Cities" />
         <AllLocation />
       </div>

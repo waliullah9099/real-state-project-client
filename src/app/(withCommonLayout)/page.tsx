@@ -10,7 +10,6 @@ import FeaturedProperties from "../../components/Home/FeaturedProperties/Feature
 export default function Home() {
   return (
     <>
-    {/* <div className="h-screen bg-slate-400"></div> */}
       <Hero />
       <FeaturedProperties />
       <OurLocation />
