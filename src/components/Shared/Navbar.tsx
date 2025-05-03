@@ -9,9 +9,9 @@ import gsap from "gsap";
 
 const menuItems = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/" },
-  { label: "Services", href: "/" },
-  { label: "Blog's", href: "/" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Services", href: "/service" },
+  { label: "Blog's", href: "/blog" },
 ];
 
 const Navbar = ({ menuItem = true }: { menuItem?: boolean }) => {

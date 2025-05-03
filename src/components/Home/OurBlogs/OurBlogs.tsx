@@ -4,7 +4,7 @@ import BlogCard from "./BlogCard";
 const OurBlogs = () => {
   return (
     <>
-      <div className="project-container max-w-7xl">
+      <div className="project-container pt-12">
         <SectionTitle title="From Our Blog" subTitle="Latest New" />
         {/* all blogs  */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

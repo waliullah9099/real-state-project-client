@@ -41,12 +41,12 @@ const agents = [
 const OurAgent = () => {
 
   return (
-    <div className="project-container max-w-7xl mx-auto px-4 mt-20">
+    <div className="project-container mt-20">
       {/* Section Title */}
       <SectionTitle title="Meet Our Agents" subTitle="Our Teams" />
 
       {/* Agent Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10 p-3 md:p-0">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10 p-3 md:p-0 px-2">
         {
           agents?.slice(0,3)?.map((agent) => (
             <OutAgentCard
