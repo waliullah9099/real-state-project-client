@@ -101,7 +101,7 @@ const PropertyTable = ({ properties }: any) => {
         </thead>
 
         {/* table data */}
-        <tbody className="bg-white divide-y divide-gray-200">
+        <tbody className="bg-white divide-y divide-gray-200 overflow-x-scroll">
           {properties?.map((property: any, index: number) => (
             <tr
               key={property?._id}
@@ -127,7 +127,6 @@ const PropertyTable = ({ properties }: any) => {
                   </div>
                 </div>
               </td>
-              {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{property.size}</td> */}
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="flex items-center">
                   {property?.type === "House" ? (
@@ -168,39 +167,34 @@ const PropertyTable = ({ properties }: any) => {
                   {property.price}
                 </div>
               </td>
-              {/* <td className="px-6 py-4 whitespace-nowrap">
-        <span
-          className={`inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium ${
-            property.postedBy === "Admin" ? "bg-blue-700 text-white" : "bg-orange-500 text-white"
-          }`}
-        >
-          {property.postedBy}
-        </span>
-      </td> */}
+
+              {/* status cell  */}
               <td className="px-6 py-4 whitespace-nowrap">
                 <span
-                  className={`inline-flex items-center px-2.5 py-1 !rounded-md text-xs font-medium ${
+                  className={`inline-flex items-center px-2.5 py-1 !rounded text-xs font-medium cursor-pointer ${
                     property.status === "approved"
-                      ? "bg-green-500 text-white rounded-md"
-                      : "bg-orange-500 text-white rounded-md"
+                      ? "bg-green-500 text-white rounded"
+                      : "bg-orange-500 text-white rounded"
                   }`}
                 >
                   {property.status}
                 </span>
               </td>
+
+              {/* action cell  */}
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                 <div className="flex space-x-2">
-                  <button className="p-1.5 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
-                    <Eye className="h-4 w-4 text-gray-600" />
+                  <button className="py-1.5 px-2 bg-gray-100 rounded hover:bg-[#1563DF] transition-all duration-200 delay-75 group">
+                    <Eye className="h-5 w-5 text-gray-600 group-hover:text-white" />
                   </button>
                   <button
                     onClick={() => {
                       setSelectedProperty(property);
                       setModalOpen(true);
                     }}
-                    className="p-1.5 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
+                    className="p-1.5 bg-gray-200 rounded hover:bg-[#1563DF] transition-all duration-200 delay-75 group"
                   >
-                    <Pencil className="h-4 w-4 text-gray-600" />
+                    <Pencil className="h-5 w-5 text-gray-600 group-hover:text-white" />
                   </button>
                   <AddProperty
                     isModalOpen={isModalOpen}
@@ -210,9 +204,9 @@ const PropertyTable = ({ properties }: any) => {
                   />
                   <button
                     onClick={() => handlePropertyDelete(property?._id)}
-                    className="p-1.5 bg-orange-100 rounded-md hover:bg-orange-200 transition-colors"
+                    className="p-1.5 bg-primary !rounded hover:bg-[#1563DF] transition-all duration-200 delay-75"
                   >
-                    <Trash2 className="h-4 w-4 text-orange-600" />
+                    <Trash2 className="h-5 w-5 text-white" />
                   </button>
                 </div>
               </td>
