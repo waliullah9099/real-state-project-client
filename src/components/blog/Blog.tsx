@@ -4,7 +4,6 @@ import BlogCard from "../Home/OurBlogs/BlogCard";
 const Blog = () => {
   return (
     <div className="bg-white">
-      {/* Hero section */}
       <div
         className="relative h-[60vh] bg-cover bg-center"
         style={{ backgroundImage: `url('https://i.ibb.co.com/q3j6cgSJ/blogPage.jpg')` }}
