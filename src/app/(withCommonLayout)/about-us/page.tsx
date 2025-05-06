@@ -1,7 +1,6 @@
 import BecomePartner from "@/components/about-us/BecomePartner";
 import WelcomeSection from "@/components/about-us/WelcomeSection";
 import OurAgent from "@/components/Home/OurAgents/OurOgents";
-import AllTestimonials from "@/components/Home/Testimonials/AllTestimonials";
 import Testimonials from "@/components/Home/Testimonials/Testimonials";
 
 const AboutPage = () => {

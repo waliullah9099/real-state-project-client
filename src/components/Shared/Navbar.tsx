@@ -12,6 +12,7 @@ const menuItems = [
   { label: "About Us", href: "/about-us" },
   { label: "Services", href: "/service" },
   { label: "Blog's", href: "/blog" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 const Navbar = ({ menuItem = true }: { menuItem?: boolean }) => {

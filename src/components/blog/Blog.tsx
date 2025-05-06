@@ -8,7 +8,7 @@ const Blog = () => {
         className="relative h-[60vh] bg-cover bg-center"
         style={{ backgroundImage: `url('https://i.ibb.co.com/q3j6cgSJ/blogPage.jpg')` }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center md:pt-24">
           <div className="text-center text-white">
             <p className="text-sm mb-2">Home / Pages / Latest News</p>
             <h1 className="text-4xl font-bold">Latest News</h1>

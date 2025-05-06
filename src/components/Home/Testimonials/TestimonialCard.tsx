@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
-import { FaQuoteLeft, FaStar, FaRegStar } from "react-icons/fa";
+import { FaQuoteLeft } from "react-icons/fa";
 
 interface TestimonialProps {
   imageSrc: string;
@@ -11,14 +11,10 @@ interface TestimonialProps {
 }
 
 const TestimonialCard: FC<TestimonialProps> = ({
-  imageSrc,
-  name,
-  title,
-  rating,
   text,
 }) => {
   return (
-    <div className="max-w-sm mx-auto bg-white rounded-2xl shadow-md p-6 space-y-4">
+    <div className="max-w-sm mx-auto bg-white rounded-2xl shadow-md p-6 space-y-4 cursor-pointer">
       <div className="text-blue-600 text-3xl flex justify-start">
         <FaQuoteLeft />
       </div>

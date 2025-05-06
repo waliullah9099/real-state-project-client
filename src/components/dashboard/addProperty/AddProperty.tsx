@@ -1,11 +1,12 @@
+import { toast } from "sonner";
+import Modal from "@/components/ui/Modal";
 import Form from "@/components/form/Form";
 import Input from "@/components/form/Input";
-import Modal from "@/components/ui/Modal";
-import { useCreatePropertiesMutation, useUpdatePropertyMutation } from "@/redux/api/propertyApi/propertyApi";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
-
-
+import {
+  useCreatePropertiesMutation,
+  useUpdatePropertyMutation,
+} from "@/redux/api/propertyApi/propertyApi";
 
 const AddProperty = ({
   isModalOpen,
@@ -36,7 +37,7 @@ const AddProperty = ({
       if (editMode && initialData?._id) {
         res = await updateProperty({ id: initialData?._id, data: newData });
         console.log(res);
-        
+
         if (res?.data?.title) {
           toast.success("Property updated successfully!");
         }
@@ -88,11 +89,6 @@ const AddProperty = ({
 };
 
 export default AddProperty;
-
-
-
-
-
 
 // const AddProperty = ({ isModalOpen, setModalOpen }: any) => {
 //   const [createProperties, {data, isLoading}] = useCreatePropertiesMutation();
