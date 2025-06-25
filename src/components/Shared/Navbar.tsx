@@ -59,7 +59,13 @@ const Navbar = ({ menuItem = true }: { menuItem?: boolean }) => {
         )}
 
         <div className="hidden md:block">
-          <ProfileMenu />
+          {/* <ProfileMenu /> */}
+          <Link
+            href="/dashboard"
+            className="btn-primary font-normal text-base"
+          >
+            Dashboard
+          </Link>
         </div>
 
         {/* Hamburger Icon */}
@@ -109,12 +115,6 @@ const Navbar = ({ menuItem = true }: { menuItem?: boolean }) => {
         </ul>
         <div className="mt-6">
           {/* <ProfileMenu /> */}
-          <Link
-            href="/dashboard"
-            className="btn-primary font-normal text-base"
-          >
-            Dashboard
-          </Link>
         </div>
       </div>
     </nav>
