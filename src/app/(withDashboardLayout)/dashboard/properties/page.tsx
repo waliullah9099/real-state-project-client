@@ -4,12 +4,13 @@ import { useState } from "react";
 import { Search, Home } from "lucide-react";
 import { useGetAllPropertiesQuery } from "@/redux/api/propertyApi/propertyApi";
 import PropertyTable from "@/components/dashboard/propertyTable/PropertyTable";
+import { dashboardProperties } from "../../../../../public/data/properties";
 
 
 export default function PropertiesPage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const query: Record<string, any> = {};
-  const { data, isLoading } = useGetAllPropertiesQuery({ ...query });
+  // const query: Record<string, any> = {};
+  // const { data, isLoading } = useGetAllPropertiesQuery({ ...query });
 
   // console.log(data);
 
@@ -27,7 +28,7 @@ export default function PropertiesPage() {
 
       <div className="bg-white rounded-xl shadow-md overflow-hidden">
         <div className="overflow-x-auto">
-          <PropertyTable properties={data} />
+          <PropertyTable properties={dashboardProperties} />
         </div>
 
         {/* <Pagination /> */}

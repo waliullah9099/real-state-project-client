@@ -3,10 +3,11 @@
 import { Users } from "lucide-react";
 import { useGetAllUsersQuery } from "@/redux/api/userApi";
 import UserTable from "@/components/dashboard/userTable/UserTable";
+import { users } from "../../../../../public/data/users";
 
 export default function UsersPage() {
-  const query: Record<string, any> = {};
-  const { data, isLoading } = useGetAllUsersQuery({ ...query });
+  // const query: Record<string, any> = {};
+  // const { data, isLoading } = useGetAllUsersQuery({ ...query });
 
   // console.log(data?.data);
 
@@ -24,7 +25,7 @@ export default function UsersPage() {
 
       <div className="bg-white rounded-xl shadow-md overflow-hidden">
         <div className="overflow-x-auto">
-          <UserTable users={data?.data} />
+          <UserTable users={users} />
         </div>
 
         {/* <Pagination /> */}
