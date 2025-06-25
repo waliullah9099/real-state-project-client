@@ -108,7 +108,13 @@ const Navbar = ({ menuItem = true }: { menuItem?: boolean }) => {
           ))}
         </ul>
         <div className="mt-6">
-          <ProfileMenu />
+          {/* <ProfileMenu /> */}
+          <Link
+            href="/dashboard"
+            className="btn-primary font-normal text-base"
+          >
+            Dashboard
+          </Link>
         </div>
       </div>
     </nav>
